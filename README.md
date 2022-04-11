@@ -1,1 +1,1 @@
-# socNet
+# Test task of NovaLab
