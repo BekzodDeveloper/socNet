@@ -1,5 +1,32 @@
-.formsControls.error input,
-.formsControls.error textarea
+.formBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #1976d2;
+    padding: 20px 20px 40px;
+}
+.regSuccess{
+    color: white;
+    font-size: 20px;
+    margin: 20px 0;
+    text-align: center;
+}
+.formsControls input{
+    background-color: #e3f2fd;
+    font-size: 16px;
+    line-height: 28px;
+    border-radius: 5px;
+    width: 350px;
+    padding:5px 10px;
+    margin: 5px 0;
+    border: none;
+}
+.formsControls input:focus{
+    outline: none;
+}
+
+.formsControls.error input
 {
     border: 2px #dd4c42 solid;
 }

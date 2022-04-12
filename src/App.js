@@ -2,12 +2,10 @@ import React from "react";
 import './App.css';
 import Header from "./components/Header/Header";
 import {Route, Routes} from "react-router";
-import {getUsers} from "./redux/usersReducer";
-import {connect} from "react-redux";
 import Users from "./components/Users/Users";
 import Profile from "./components/Profile/Profile";
-import Register from "./components/Register/Register";
-import Login from "./components/Login/Login";
+import Register from "./components/Login-Registration/Register";
+import Login from "./components/Login-Registration/Login";
 
 class App extends React.Component {
     render() {
@@ -37,8 +35,3 @@ class App extends React.Component {
 
 
 export default App;
-
-
-const Page = (props) => {
-    return (<h1>{props.title}</h1>)
-}

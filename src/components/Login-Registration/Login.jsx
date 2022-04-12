@@ -6,22 +6,20 @@ import {connect} from "react-redux";
 import {login} from "../../redux/authReducer";
 import {useNavigate} from "react-router-dom";
 import styles from "../common/FormsControls/FormsControls.module.css";
+// import styles from ""
 
 const LoginForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
             <div>
                 <label htmlFor="Email">Email: </label>
-                <Field name="email" validate={required} component={Input} type="text" placeholder="Email"/>
+                <Field name="email" validate={required} component={Input} type="email" placeholder="Email" value="Gooo"/>
             </div>
             <div>
                 <label htmlFor="Password">Password: </label>
                 <Field name="password" validate={required} component={Input} type="password" placeholder="Password"/>
             </div>
-            {props.error &&
-            <div className={styles.formSummaryError}>
-                {props.error}
-            </div>}
+
 
             <button className={styles.loginBtn} type="submit">Login</button>
         </form>
@@ -30,7 +28,7 @@ const LoginForm = (props) => {
 }
 
 const Login = (props) => {
-    const onSubmit = (formData) => {
+    const login = (formData) => {
         props.login(formData.email, formData.password)
     }
 
@@ -42,9 +40,9 @@ const Login = (props) => {
     });
 
     return (
-        <div>
+        <div className={styles.formBox}>
             <h1>Login</h1>
-            <LoginReduxForm onSubmit={onSubmit}/>
+            <LoginReduxForm onSubmit={login}/>
         </div>
     );
 }

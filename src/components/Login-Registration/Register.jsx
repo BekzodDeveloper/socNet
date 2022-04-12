@@ -3,25 +3,19 @@ import {Field, reduxForm} from 'redux-form';
 import {Input} from "../common/FormsControls/FormsControls";
 import {required} from "../../utils/validators/validators";
 import {connect} from "react-redux";
-import {register} from "../../redux/authReducer";
-import {useNavigate} from "react-router-dom";
+import { register} from "../../redux/authReducer";
 import styles from "../common/FormsControls/FormsControls.module.css";
 
 const RegisterForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
             <div>
-                <label htmlFor="Email">Email: </label>
-                <Field name="email" validate={required} component={Input} type="text" placeholder="Email"/>
+                <Field name="email" validate={required} component={Input} type="email" placeholder="Email"/>
             </div>
             <div>
-                <label htmlFor="Password">Password: </label>
                 <Field name="password" validate={required} component={Input} type="password" placeholder="Password"/>
             </div>
-            {props.error &&
-            <div className={styles.formSummaryError}>
-                {props.error}
-            </div>}
+
 
             <button className={styles.loginBtn} type="submit">Register</button>
         </form>
@@ -30,29 +24,27 @@ const RegisterForm = (props) => {
 }
 
 const Register = (props) => {
-    const onSubmit = (formData) => {
-        props.register(formData.email, formData.password)
+    const register = (formData) => {
+        props.register(formData.email, formData.password);
     }
 
-    const navigate = useNavigate();
-    React.useEffect(() => {
-        if (props.isAuth) {
-            navigate('/login');
-        }
-    });
-
     return (
-        <div>
+        <div className={styles.formBox}>
             <h1>Register</h1>
-            <RegisterReduxForm onSubmit={onSubmit}/>
+            <RegisterReduxForm onSubmit={register}/>
+            <div>{props.isRegistered &&
+            <div className={styles.regSuccess}>
+                Congratulations! <br/>
+                Now you are part of our Cool.Community!
+            </div>}
+            </div>
         </div>
     );
 }
 
-// HOC reduxForm for RegisterForm
 const RegisterReduxForm = reduxForm({form: 'register'})(RegisterForm);
 
 const mapStateToProps = (state) => ({
-    isAuth: state.auth.isAuth
+    isRegistered: state.auth.isRegistered
 })
 export default connect(mapStateToProps, {register})(Register);

@@ -21,5 +21,9 @@ export const
         },
         register(email, password) {
             return instance.post(`register`, {email, password})
+        },
+        getAuthUserProfile(userId) {
+            return instance.get(`users/${userId}`)
         }
+
     }

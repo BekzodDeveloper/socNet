@@ -5,13 +5,19 @@ import {compose} from "redux";
 import {useParams} from "react-router";
 import Preloader from "../common/Preloader";
 import styles from "./Profile.module.css";
+import {getAuthUserProfile} from "../../redux/authReducer";
 
 
 class Profile extends React.Component {
     componentDidMount() {
         let userId = this.props.params.userId;
-        if (!userId) userId = 1;
-        this.props.getUserProfile(userId);
+        if (!userId) {
+            userId = this.props.authorizedUserId;
+        }
+        this.props.getUserProfile(userId)
+
+
+
     }
 
     render() {
@@ -32,10 +38,11 @@ class Profile extends React.Component {
 const mapStateToProps = (state) => {
     return {
         profileData: state.profilePage.profileData,
+        authorizedUserId: state.auth.authUserData.userId
     }
 }
 const withParams = (Component) => props => <Component {...props} params={useParams()}/>;
 
 export default compose(
-    connect(mapStateToProps, {getUserProfile}),
+    connect(mapStateToProps, {getUserProfile, getAuthUserProfile}),
     withParams)(Profile);

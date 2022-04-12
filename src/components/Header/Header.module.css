@@ -1,32 +1,74 @@
-.header{
+.header {
     padding: 15px;
     background-color: #e3f2fd;
 }
-.logoMenu{
+
+.logoMenu {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 25%;
 }
-.logo{
+
+.logo {
     font-weight: 900;
     font-size: 28px;
     color: #1976d2;
 }
-.menuList{
+
+.menuList {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 
 }
-.itemLink{
+
+.itemLink {
     font-size: 18px;
     font-weight: 600;
     text-transform: uppercase;
     color: #1976d2;
     padding: 5px 10px;
     display: inline-block;
-}
-.itemText{
+    border-bottom: 2px solid transparent;
+    margin: 0 10px;
 
+}
+
+.itemText {
+
+}
+
+.account a {
+    padding: 10px 15px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 4px;
+    font-family: Roboto;
+    text-align: center;
+    line-height: 25px;
+    letter-spacing: 1.5px;
+
+}
+.profileInfo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.userLogin{
+    margin-right: 10px;
+    font-weight: 500;
+}
+.loginLink {
+    border: 1px solid #1976d280;
+    color: #1976d2;
+}
+.regLink{
+    background-color: #1976d2;
+    color: #fff;
+    margin-left: 15px;
+}
+.userImg{
+    width: 50px;
+    border-radius: 50%;
 }

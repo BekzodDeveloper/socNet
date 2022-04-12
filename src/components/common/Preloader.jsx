@@ -8,6 +8,6 @@ const Preloader = () => {
         justifyContent: 'center',
         alignItems: 'center',
         margin: 50 - 10
-    }}><img src={preloader} style={{width: 50}}/></div>;
+    }}><img src={preloader} style={{width: 50}} alt="preloader"/></div>;
 }
 export default Preloader;
