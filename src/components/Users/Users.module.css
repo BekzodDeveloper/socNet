@@ -1,0 +1,39 @@
+.offer{
+    background-color: #1976d2;
+    padding: 20px;
+    text-align: center;
+    color: #e3f2fd;
+}
+.offerSubTitle{
+    font-size: 20px;
+}
+
+.usersList{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    flex-wrap: wrap;
+    background-color: #e3f2fd;
+    height: 100%;
+    margin: 0;
+    padding: 40px;
+}
+.userItem{
+    padding: 10px;
+    margin: 0 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.userImg{
+    max-width: 100px;
+    width: 100%;
+}
+.userImg img{
+    width: 100%;
+    border-radius: 50%;
+}
+.navLink{
+    color: #1976d2;
+}
