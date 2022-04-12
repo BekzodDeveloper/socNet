@@ -1,10 +1,11 @@
 import {authAPI} from "../api/api";
-import {stopSubmit} from "redux-form";
+// import {stopSubmit} from "redux-form";
 
 const SET_AUTH_USER_DATA = "SET_AUTH_USER_DATA";
 
 
 let initialState = {
+    userId: null,
     token: null,
     email: null,
     login: null,
@@ -16,34 +17,42 @@ const authReducer = (state = initialState, action) => {
         case SET_AUTH_USER_DATA:
             return {
                 ...state,
-                ...action.payload
+                token: action.token,
+                isAuth: action.isAuth
             };
         default:
             return state;
     }
 };
 
-export const setAuthUserData = (userId, email, login, isAuth) => ({
-        type: SET_AUTH_USER_DATA,
-        payload: {userId, email, login, isAuth}
-    }),
+export const setAuthUserData = (token,isAuth) => ({type: SET_AUTH_USER_DATA, token,isAuth}),
 
-    getAuthUserData = () => (dispatch) => {
-        authAPI.me().then(response => {
-            if (response.data.resultCode === 0) {
-                let {id, email, login} = response.data.data;
-                dispatch(setAuthUserData(id, email, login, true));
+// getAuthUserData = () => (dispatch) => {
+//     authAPI.me().then(response => {
+//         if (response.data.resultCode === 0) {
+//             let {id, email, login} = response.data.data;
+//             dispatch(setAuthUserData(id, email, login, true));
+//         }
+//     });
+// },
+    register = (email, password) => (dispatch) => {
+        authAPI.register(email, password).then(response => {
+            if (response.data) {
+                console.log('Registration is successful!');
+
+            } else {
+                console.log('Error')
             }
         });
     },
-    login = (email, password, rememberMe = false) => (dispatch) => {
-        authAPI.login(email, password, rememberMe).then(response => {
-            if (response.data.resultCode === 0) {
-                dispatch(getAuthUserData())
+    login = (email, password) => (dispatch) => {
+        authAPI.login(email, password).then(response => {
+            if (response.data) {
+                console.log('Successful!')
+                dispatch(setAuthUserData(response.data.token, true))
+
             } else {
-                //Show summary error for login form from API
-                let message = response.data.messages.length > 0 ? response.data.messages : 'Some error';
-                dispatch(stopSubmit("login", {_error: message}))
+                console.log("Error");
             }
         });
     }

@@ -6,6 +6,8 @@ import {getUsers} from "./redux/usersReducer";
 import {connect} from "react-redux";
 import Users from "./components/Users/Users";
 import Profile from "./components/Profile/Profile";
+import Register from "./components/Register/Register";
+import Login from "./components/Login/Login";
 
 class App extends React.Component {
     render() {
@@ -23,7 +25,8 @@ class App extends React.Component {
                                        element={<Profile/>}/>
                             </Route>
 
-                            <Route path='/login' element={<Page title="Login"/>}/>
+                            <Route path='/login' element={<Login title="Login"/>}/>
+                            <Route path='/register' element={<Register title="Register"/>}/>
                         </Routes>
                     </div>
                 </div>

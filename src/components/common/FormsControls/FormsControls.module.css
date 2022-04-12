@@ -1,0 +1,25 @@
+.formsControls.error input,
+.formsControls.error textarea
+{
+    border: 2px #dd4c42 solid;
+}
+
+.formsControls.error .errorText{
+    color: #dd4c42;
+}
+.formSummaryError{
+    padding: 5px;
+    color: #dd4c42;
+    border: 1px #dd4c42 dashed;
+    margin: 8px 0;
+    display: inline-block;
+}
+.rememberMe{
+    display: flex;
+    cursor: pointer;
+    padding: 5px 0 0 0;
+}
+.loginBtn{
+    margin-top: 5px;
+    display: block;
+}

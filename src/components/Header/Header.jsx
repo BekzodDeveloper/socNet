@@ -5,12 +5,27 @@ import Stack from "@mui/material/Stack";
 import {NavLink} from "react-router-dom";
 
 import styles from './Header.module.css';
+import axios from "axios";
 
 const Header = () => {
+    const email = 'tobias.funke@reqres.in',
+        password = 'passa';
+
     const menuItems = [
         {id: 1, path: "/", menuText: "Home"},
         {id: 2, path: "/profile", menuText: "Profile"}
     ];
+
+    const login = () => {
+        axios.post('https://reqres.in/api/login', {email, password}).then(response => {
+
+            })
+    }
+    const register = () => {
+        axios.post('https://reqres.in/api/register', {email, password}).then(response => {
+
+            })
+    }
 
     const menuItemsEl = menuItems.map(m => <MenuItem path={m.path} menuText={m.menuText} key={m.id}/>);
 
@@ -23,9 +38,13 @@ const Header = () => {
                 <ul className={styles.menuList}>
                     {menuItemsEl}
                 </ul>
+                <div>
+                    <NavLink to={"/login"}>Login  </NavLink>
+                    <NavLink to={"/register"}>Register</NavLink>
+                </div>
                 <Stack spacing={2} direction="row">
-                    <Button variant="outlined">Login</Button>
-                    <Button variant="contained">Registration</Button>
+                    <Button onClick={login} variant="outlined">Login</Button>
+                    <Button onClick={register} variant="contained">Registration</Button>
                 </Stack>
             </Box>
         </header>
