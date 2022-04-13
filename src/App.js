@@ -16,6 +16,7 @@ class App extends React.Component {
                     <div className="container">
                         <Routes>
                             <Route index element={<Users/>}/>
+                            <Route path='/' element={<Users/>}/>
 
                             <Route exact path='/profile'
                                    element={<Profile/>}>
