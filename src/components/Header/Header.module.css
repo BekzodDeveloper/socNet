@@ -34,11 +34,6 @@
     margin: 0 10px;
 
 }
-
-.itemText {
-
-}
-
 .account a {
     padding: 10px 15px;
     font-size: 15px;
@@ -48,6 +43,7 @@
     text-align: center;
     line-height: 25px;
     letter-spacing: 1.5px;
+    display: inline-block;
 
 }
 .profileInfo{
@@ -67,8 +63,29 @@
     background-color: #1976d2;
     color: #fff;
     margin-left: 15px;
+    border: 1px solid #1976d280;
 }
 .userImg{
     width: 50px;
     border-radius: 50%;
+}
+@media (max-width: 650px) {
+    .logoBox{
+        display: none;
+    }
+}
+@media (max-width: 425px) {
+    .account a{
+        padding: 5px 10px;
+    }
+    .itemLink{
+        font-size: 16px;
+
+        padding: 3px 8px;
+        border-bottom: 2px solid transparent;
+        margin: 0 5px;
+    }
+    .userLogin{
+        display: none;
+    }
 }

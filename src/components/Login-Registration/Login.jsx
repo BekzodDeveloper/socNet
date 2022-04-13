@@ -23,7 +23,7 @@ const LoginForm = (props) => {
             </div>
 
 
-            <button className={styles.loginBtn} type="submit">Login</button>
+            <button className={styles.loginBtn} type="submit">Sign In</button>
         </form>
 
     );

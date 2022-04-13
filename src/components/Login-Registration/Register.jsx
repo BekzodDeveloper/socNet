@@ -19,7 +19,7 @@ const RegisterForm = (props) => {
             </div>
 
 
-            <button className={styles.loginBtn} type="submit">Register</button>
+            <button className={styles.loginBtn} type="submit">Sign Up</button>
         </form>
 
     );
@@ -32,7 +32,7 @@ const Register = (props) => {
 
     return (
         <div className={styles.formSection}>
-            <h1>Register</h1>
+            <h1>Registration</h1>
             <RegisterReduxForm onSubmit={register}/>
             <div>{props.isRegistered &&
             <div className={styles.regSuccess}>

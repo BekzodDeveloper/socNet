@@ -10,6 +10,10 @@
     color: #e3f2fd;
     font-size: 30px;
 }
+.formBox{
+    width: 100%;
+    max-width: 350px;
+}
 .formBox label,
 .formBox span
 {
@@ -32,7 +36,7 @@
     font-size: 16px;
     line-height: 28px;
     border-radius: 5px;
-    width: 350px;
+    width: 100%;
     padding:5px 10px;
     margin: 5px 0;
     border: none;

@@ -11,7 +11,7 @@
 .usersList{
     display: flex;
     justify-content: space-between;
-    align-content: center;
+    align-items: center;
     flex-wrap: wrap;
     background-color: #e3f2fd;
     height: 100%;
@@ -36,4 +36,11 @@
 }
 .navLink{
     color: #1976d2;
+}
+
+@media (max-width: 425px) {
+    .usersList{
+        padding: 15px;
+        justify-content: space-around;
+    }
 }

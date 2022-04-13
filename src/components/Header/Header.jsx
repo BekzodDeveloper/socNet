@@ -19,7 +19,7 @@ class Header extends React.Component {
         return (
             <header className={styles.header}>
                 <Box sx={{width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: "center"}}>
-                    <div>
+                    <div className={styles.logoBox}>
                         <NavLink className={styles.logo} to="/">Cool.Community</NavLink>
                     </div>
                     <ul className={styles.menuList}>
