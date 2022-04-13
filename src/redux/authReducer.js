@@ -70,8 +70,6 @@ export const setAuthUserData = (token, isAuth, userId) => ({
         authAPI.register(email, password).then(response => {
             if (response.status === 200) {
                 dispatch(setUserRegistered(true));
-            } else {
-                console.log('Error')
             }
         });
     },
@@ -85,8 +83,6 @@ export const setAuthUserData = (token, isAuth, userId) => ({
                 dispatch(setAuthUserData(response.data.token, true, parseInt(userId)));
                 dispatch(getAuthUserProfile(parseInt(userId)));
 
-            } else {
-                console.log("Error");
             }
         });
     }

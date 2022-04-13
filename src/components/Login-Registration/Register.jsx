@@ -8,11 +8,13 @@ import styles from "../common/FormsControls/FormsControls.module.css";
 
 const RegisterForm = (props) => {
     return (
-        <form onSubmit={props.handleSubmit}>
+        <form className={styles.formBox} onSubmit={props.handleSubmit}>
             <div>
+                <label htmlFor="Email">Email<span>* </span></label>
                 <Field name="email" validate={required} component={Input} type="email" placeholder="Email"/>
             </div>
             <div>
+                <label htmlFor="Password">Password<span>* </span></label>
                 <Field name="password" validate={required} component={Input} type="password" placeholder="Password"/>
             </div>
 
@@ -29,7 +31,7 @@ const Register = (props) => {
     }
 
     return (
-        <div className={styles.formBox}>
+        <div className={styles.formSection}>
             <h1>Register</h1>
             <RegisterReduxForm onSubmit={register}/>
             <div>{props.isRegistered &&

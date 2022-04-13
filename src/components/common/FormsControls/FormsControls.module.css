@@ -1,10 +1,25 @@
-.formBox{
+.formSection{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #1976d2;
     padding: 20px 20px 40px;
+}
+.formSection h1{
+    color: #e3f2fd;
+    font-size: 30px;
+}
+.formBox label,
+.formBox span
+{
+    font-weight: 500;
+    color: #e3f2fd;
+}
+.formBox label span
+{
+    font-weight: 500;
+    color: #dd4c42;
 }
 .regSuccess{
     color: white;
@@ -47,6 +62,23 @@
     padding: 5px 0 0 0;
 }
 .loginBtn{
-    margin-top: 5px;
+    margin-top: 10px;
     display: block;
+    width: 100%;
+    background-color: #e3f2fd;
+    font-size: 18px;
+    line-height: 28px;
+    border-radius: 5px;
+    padding:5px 10px;
+    cursor: pointer;
+    font-weight: 500;
+    border: none;
+    color: #1976d2;
+    text-transform: uppercase;
+}
+.loginBtn:hover{
+    background-color: rgba(227, 242, 253, 0.9);
+}
+.loginBtn:active{
+    background-color: #fff;
 }

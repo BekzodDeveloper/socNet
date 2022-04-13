@@ -6,18 +6,20 @@ import {connect} from "react-redux";
 import {login} from "../../redux/authReducer";
 import {useNavigate} from "react-router-dom";
 import styles from "../common/FormsControls/FormsControls.module.css";
-// import styles from ""
 
 const LoginForm = (props) => {
     return (
-        <form onSubmit={props.handleSubmit}>
+        <form className={styles.formBox} onSubmit={props.handleSubmit}>
             <div>
-                <label htmlFor="Email">Email: </label>
-                <Field name="email" validate={required} component={Input} type="email" placeholder="Email" value="Gooo"/>
+                <label htmlFor="Email">Email<span>* </span></label>
+                <Field name="email" validate={required} component={Input} type="email" placeholder="Email"/>
+
             </div>
             <div>
-                <label htmlFor="Password">Password: </label>
-                <Field name="password" validate={required} component={Input} type="password" placeholder="Password"/>
+                <label htmlFor="Password">Password<span>* </span></label>
+                <Field name="password" validate={required} component={Input} type="password"
+                       placeholder="Password"/>
+
             </div>
 
 
@@ -40,14 +42,13 @@ const Login = (props) => {
     });
 
     return (
-        <div className={styles.formBox}>
+        <div className={styles.formSection}>
             <h1>Login</h1>
             <LoginReduxForm onSubmit={login}/>
         </div>
     );
 }
 
-// HOC reduxForm for LoginForm
 const LoginReduxForm = reduxForm({form: 'login'})(LoginForm);
 
 const mapStateToProps = (state) => ({

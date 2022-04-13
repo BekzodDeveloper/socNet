@@ -1,11 +1,9 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import {NavLink} from "react-router-dom";
-
 import styles from './Header.module.css';
 import "./../../styles/active-links.css"
 import {connect} from "react-redux";
-// import {getUserProfile} from "../../redux/profileReducer";
 import {getAuthUserProfile} from "../../redux/authReducer";
 
 class Header extends React.Component {
@@ -44,13 +42,13 @@ class Header extends React.Component {
 
 export const MenuItems = (props) => {
     return (<>
-            <li className={styles.item}>
+            <li>
                 <NavLink className={styles.itemLink + ' item-link'} to='/'>
                     <div className={styles.itemText}>Home</div>
                 </NavLink>
             </li>
             {props.isAuth &&
-            <li className={styles.item}>
+            <li>
                 <NavLink className={styles.itemLink + ' item-link'} to='/profile'>
                     <div className={styles.itemText}>Profile</div>
                 </NavLink>

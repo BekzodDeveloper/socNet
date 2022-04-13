@@ -15,9 +15,6 @@ class Profile extends React.Component {
             userId = this.props.authorizedUserId;
         }
         this.props.getUserProfile(userId)
-
-
-
     }
 
     render() {
